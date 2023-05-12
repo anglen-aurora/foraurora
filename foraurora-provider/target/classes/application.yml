@@ -1,0 +1,41 @@
+server:
+  port: 9909
+  servlet:
+    context-path: /provider
+spring:
+  application:
+    name: foraurora-provider
+  redis:
+    redisson:
+      file: classpath:redisson.yaml
+    database: 1
+    host: 1.117.59.6
+    port: 6380
+    cluster:
+      nodes:
+        - 1.117.59.6:6381
+        - 1.117.59.6:6382
+        - 1.117.59.6:6383
+        - 1.117.59.6:6384
+        - 1.117.59.6:6385
+    password: Aurora@126.com
+
+dubbo:
+  registry:
+    protocol: zookeepr
+    address: zookeeper://1.117.59.6:2181
+    check: true
+  protocol:
+    name: dubbo
+    port: 10999
+  application:
+    name: 'foraurora-provider'
+  provider:
+    retries: 3
+    timeout: 5000
+    filter: "customizeTraceIdFilter"
+  consumer:
+    retries: 3
+    timeout: 5000
+    check: false
+    lazy: true

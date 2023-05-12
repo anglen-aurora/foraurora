@@ -1,0 +1,4 @@
+foraurora:
+  config:
+    package-prefix:
+      - cn.foraurora

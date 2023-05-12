@@ -1,0 +1,6 @@
+server:
+  port: 3422
+
+spring:
+  application:
+    name: kafka-demo

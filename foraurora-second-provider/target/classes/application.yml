@@ -1,0 +1,22 @@
+server:
+  port: 9900
+  servlet:
+    context-path: /foraurora-second-provider
+spring:
+  application:
+    name: foraurora-second-provider
+
+dubbo:
+  registry:
+    protocol: zookeepr
+    address: zookeeper://1.117.59.6:2181
+    check: true
+  protocol:
+    name: dubbo
+    port: 10997
+  application:
+    name: "foraurora-second-provider"
+  provider:
+    retries: 3
+    timeout: 5000
+    filter: "customizeTraceIdFilter"

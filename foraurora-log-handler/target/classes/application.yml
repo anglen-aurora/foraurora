@@ -1,0 +1,6 @@
+server:
+  port: 8957
+
+spring:
+  application:
+    name: foraurora-log-handler
