@@ -1,5 +1,48 @@
 server:
   port: 8999
+  servlet:
+    context-path: /hello
 spring:
   application:
     name: foraurora-hello
+  datasource:
+    druid:
+      url: jdbc:mysql://1.117.59.6:3399/foraurora
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: foraurora
+      password: Gq+hMk6P3oWsktrluaBkDo8TJtA+f4aOfsre/NyxQdursXGpLu82e1lU4M6PXpw1eqGxXaJ1OeUtvD1y83lkdg==
+      initial-size: 8
+      max-active: 100
+      connect-timeout: 3000
+      validation-query: select 1
+      web-stat-filter:
+        enabled: true
+        url-pattern: /durid
+        session-stat-enable: true
+        session-stat-max-count: 3
+        principal-cookie-name: foraurora-cookie
+        principal-session-name: foraurora-session
+      stat-view-servlet:
+        enabled: true
+        login-username: foraurora
+        login-password: Druid@2023.com
+      filter:
+        config:
+          enabled: true
+        stat:
+          enabled: true
+          slow-sql-millis: 3000
+          merge-sql: true
+        wall:
+          enabled: true
+          db-type: mysql
+          config:
+            delete-allow: false
+            drop-table-allow: false
+            call-allow: false
+            create-table-allow: false
+            alter-table-allow: false
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJkm/y27HXUo8afAeIKBUQBLZMfGXXiisHucpygKw+ZYIZYCFrhJGCAEFXfKe8EAzUdG90PQTM0zPRuQJLd325ECAwEAAQ==
+#            privateKey:MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAmSb/LbsddSjxp8B4goFRAEtkx8ZdeKKwe5ynKArD5lghlgIWuEkYIAQVd8p7wQDNR0b3Q9BMzTM9G5Akt3fbkQIDAQABAkA3W8I3PIB8Xe1jro2g1q95xMbL82bL+TqDo+9D6QhAlR5OGsjNawX1FgO4cEH12qToyaQDn0c0iIyEYtwBJgZFAiEA9IooArRnj3vPzhIZznB+McdPuqmKHxzoBsYrCSEtOC8CIQCgVG3AtwPJdXcsqteskU+7ZYbRFXprgUmMJnqeo894PwIhANEpur9Vf58Cz+P7J4ekQMxjJpcKnNGv7+abagQNFJiRAiArLdHJHwDkFsCbxP8EuLXScEtYsAIiRdV66zoG03MinQIhAKLy8ShOPQXcdQvbEFU8YNR68KEZRr6Z2v74UimRy+1Y
+#            publicKey:MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJkm/y27HXUo8afAeIKBUQBLZMfGXXiisHucpygKw+ZYIZYCFrhJGCAEFXfKe8EAzUdG90PQTM0zPRuQJLd325ECAwEAAQ==
+#            password:Gq+hMk6P3oWsktrluaBkDo8TJtA+f4aOfsre/NyxQdursXGpLu82e1lU4M6PXpw1eqGxXaJ1OeUtvD1y83lkdg==
